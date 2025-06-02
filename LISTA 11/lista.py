@@ -96,8 +96,3 @@ assoc_bin = pd.get_dummies(assoc_data)
 frequent = apriori(assoc_bin, min_support=0.1, use_colnames=True)
 rules = association_rules(frequent, metric="confidence", min_threshold=0.6)
 print(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].sort_values('lift', ascending=False).head(5))
-
-print("Resumo:")
-print("- Random Forest e Decision Tree apresentaram boa acurácia, especialmente com variáveis derivadas.")
-print("- Clusterização sugeriu grupos distintos por idade e tarifa.")
-print("- Regras de associação mostraram que mulheres e passageiros da 1ª classe têm maior chance de sobrevivência.")
